@@ -7,3 +7,7 @@ export function executeScroll(ref: React.MutableRefObject<HTMLElement | null>) {
 export function openResume() {
     window.open("/joe_gerhard_resume.pdf", "_blank");
 }
+// Helper function for opening an email to me in a new tab
+export function emailMe() {
+    window.open("mailto:JLGerhard@gmail.com", "_blank");
+}

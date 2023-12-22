@@ -1,11 +1,8 @@
 import { StyledHomeSection, Card } from "./styles";
 import Button from "../Button";
+import { emailMe } from "../../utils";
 
 export default function HomeSection() {
-    const handleEmailMe = () => {
-        window.open("mailto:JLGerhard@gmail.com", "_blank");
-    };
-
     return (
         <StyledHomeSection>
             <Card>
@@ -25,7 +22,7 @@ export default function HomeSection() {
                     appreciation for connecting with people from all walks of
                     life.
                 </p>
-                <Button $dark onClick={handleEmailMe}>
+                <Button $dark onClick={emailMe}>
                     Get in Touch
                 </Button>
             </Card>
