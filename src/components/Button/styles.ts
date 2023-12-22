@@ -1,7 +1,13 @@
 import styled, { css } from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 
-export const StyledButton = styled.button(
+interface StyledButtonProps {
+    readonly $margin?: string;
+    readonly $hide?: boolean;
+    readonly $dark?: boolean;
+}
+
+export const StyledButton = styled.button<StyledButtonProps>(
     ({ theme, $margin, $hide, $dark }) => {
         const color = $dark ? "white" : theme.accent;
         const background = $dark ? theme.accent : "transparent";
