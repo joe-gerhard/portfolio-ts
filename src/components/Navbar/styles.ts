@@ -10,7 +10,7 @@ interface StyledNavProps {
 export const StyledNav = styled.nav<StyledNavProps>(
     ({ theme, $visible, $isOpen }) => css`
         position: fixed;
-        top: ${$visible || $isOpen ? "0" : "-60px"};
+        top: ${$visible || $isOpen ? "0" : "-70px"};
         z-index: 100;
         display: flex;
         justify-content: flex-end;
@@ -19,6 +19,7 @@ export const StyledNav = styled.nav<StyledNavProps>(
         height: 60px;
         width: 100%;
         transition: 0.5s;
+        box-shadow: 0 2px 20px 0 ${theme.dark + "55"};
 
         &:hover {
             cursor: default;
