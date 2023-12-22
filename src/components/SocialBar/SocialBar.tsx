@@ -1,7 +1,7 @@
 import { StyledSocialBar } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SocialBar = () => {
+export default function SocialBar() {
     return (
         <StyledSocialBar>
             <a
@@ -41,6 +41,4 @@ const SocialBar = () => {
             </a>
         </StyledSocialBar>
     );
-};
-
-export default SocialBar;
+}

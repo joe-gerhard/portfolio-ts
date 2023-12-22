@@ -1,4 +1,4 @@
-import { FC, MutableRefObject } from "react";
+import { MutableRefObject } from "react";
 import { StyledContactSection } from "./styles";
 import Button from "../Button";
 import SocialBar from "../SocialBar";
@@ -8,7 +8,7 @@ interface ContactSectionProps {
     contactRef: MutableRefObject<HTMLElement | null>;
 }
 
-const ContactSection: FC<ContactSectionProps> = ({ contactRef }) => {
+export default function ContactSection({ contactRef }: ContactSectionProps) {
     const handleEmailMe = () => {
         window.open("mailto:JLGerhard@gmail.com", "_blank");
     };
@@ -26,6 +26,4 @@ const ContactSection: FC<ContactSectionProps> = ({ contactRef }) => {
             </Button>
         </StyledContactSection>
     );
-};
-
-export default ContactSection;
+}

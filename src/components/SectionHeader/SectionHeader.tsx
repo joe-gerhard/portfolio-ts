@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useRef } from "react";
+import { PropsWithChildren, useRef } from "react";
 import { StyledSectionHeader } from "./styles";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
@@ -6,7 +6,10 @@ interface SectionHeaderProps extends PropsWithChildren {
     readonly $textAlign?: string;
 }
 
-const SectionHeader: FC<SectionHeaderProps> = ({ children, ...props }) => {
+export default function SectionHeader({
+    children,
+    ...props
+}: SectionHeaderProps) {
     const ref = useRef(null);
     const isIntersecting = useIntersectionObserver(ref);
 
@@ -19,6 +22,4 @@ const SectionHeader: FC<SectionHeaderProps> = ({ children, ...props }) => {
             {children}
         </StyledSectionHeader>
     );
-};
-
-export default SectionHeader;
+}

@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { StyledButton } from "./styles";
 
 interface ButtonProps extends PropsWithChildren {
@@ -9,8 +9,6 @@ interface ButtonProps extends PropsWithChildren {
     onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ children, ...props }) => {
+export default function Button({ children, ...props }: ButtonProps) {
     return <StyledButton {...props}>{children}</StyledButton>;
-};
-
-export default Button;
+}

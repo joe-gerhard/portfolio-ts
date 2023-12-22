@@ -1,4 +1,4 @@
-import { FC, MutableRefObject } from "react";
+import { MutableRefObject } from "react";
 import { StyledProjectsSection } from "./styles";
 import { PROJECTS } from "../../constants/projects";
 import Project from "./Project";
@@ -8,7 +8,7 @@ interface ProjectsSectionProps {
     projectsRef: MutableRefObject<HTMLElement | null>;
 }
 
-const ProjectsSection: FC<ProjectsSectionProps> = ({ projectsRef }) => {
+export default function ProjectsSection({ projectsRef }: ProjectsSectionProps) {
     return (
         <StyledProjectsSection ref={projectsRef}>
             <SectionHeader>Projects</SectionHeader>
@@ -17,6 +17,4 @@ const ProjectsSection: FC<ProjectsSectionProps> = ({ projectsRef }) => {
             ))}
         </StyledProjectsSection>
     );
-};
-
-export default ProjectsSection;
+}

@@ -1,6 +1,6 @@
 import { StyledFooter } from "./styles";
 
-const Footer = () => {
+export default function Footer() {
     return (
         <StyledFooter>
             <div>Developed by Joe Gerhard</div>
@@ -9,6 +9,4 @@ const Footer = () => {
             </div>
         </StyledFooter>
     );
-};
-
-export default Footer;
+}

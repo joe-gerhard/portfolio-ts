@@ -1,4 +1,4 @@
-import { FC, MutableRefObject } from "react";
+import { MutableRefObject } from "react";
 import { StyledNav, StyledLink, Icon, Menu } from "./styles";
 import Button from "../Button";
 import { useState } from "react";
@@ -12,13 +12,13 @@ interface NavbarProps {
     readonly $visible: boolean;
 }
 
-const Navbar: FC<NavbarProps> = ({
+export default function Navbar({
     aboutRef,
     experienceRef,
     projectsRef,
     contactRef,
     $visible,
-}) => {
+}: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleToggleMenu = () => {
@@ -62,6 +62,4 @@ const Navbar: FC<NavbarProps> = ({
             </Menu>
         </StyledNav>
     );
-};
-
-export default Navbar;
+}

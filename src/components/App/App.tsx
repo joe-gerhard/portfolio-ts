@@ -9,7 +9,7 @@ import ContactSection from "../ContactSection/ContactSection";
 import Footer from "../Footer";
 import useScrollListener from "../../hooks/useScrollListener";
 
-const App = () => {
+export default function App() {
     const [visible, setVisible] = useState<boolean>(true);
     const scroll = useScrollListener();
 
@@ -44,6 +44,4 @@ const App = () => {
             <Footer />
         </StyledApp>
     );
-};
-
-export default App;
+}

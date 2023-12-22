@@ -1,7 +1,7 @@
 import { StyledHomeSection, Card } from "./styles";
 import Button from "../Button";
 
-const HomeSection = () => {
+export default function HomeSection() {
     const handleEmailMe = () => {
         window.open("mailto:JLGerhard@gmail.com", "_blank");
     };
@@ -31,6 +31,4 @@ const HomeSection = () => {
             </Card>
         </StyledHomeSection>
     );
-};
-
-export default HomeSection;
+}

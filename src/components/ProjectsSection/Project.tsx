@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { useRef } from "react";
 import {
     Description,
     Text,
@@ -15,7 +15,7 @@ interface ProjectProps {
     project: project;
 }
 
-const Project: FC<ProjectProps> = ({ project }) => {
+export default function Project({ project }: ProjectProps) {
     const ref = useRef(null);
     const isIntersecting = useIntersectionObserver(ref, "-25%");
 
@@ -65,6 +65,4 @@ const Project: FC<ProjectProps> = ({ project }) => {
             </Text>
         </StyledProject>
     );
-};
-
-export default Project;
+}

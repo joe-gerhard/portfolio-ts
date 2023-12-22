@@ -1,8 +1,7 @@
-import { FC } from "react";
 import { StyledErrorPage } from "./styles";
 import { useRouteError } from "react-router-dom";
 
-const ErrorPage: FC = () => {
+export default function ErrorPage() {
     const error = useRouteError();
     console.error(error);
 
@@ -27,6 +26,4 @@ const ErrorPage: FC = () => {
             )}
         </StyledErrorPage>
     );
-};
-
-export default ErrorPage;
+}

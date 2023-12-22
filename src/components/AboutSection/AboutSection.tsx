@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { StyledAboutSection, Text, Card, ImageContainer } from "./styles";
 import SectionHeader from "../SectionHeader";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
@@ -7,7 +6,7 @@ interface AboutSectionProps {
     aboutRef: React.MutableRefObject<HTMLElement | null>;
 }
 
-const AboutSection: FC<AboutSectionProps> = ({ aboutRef }) => {
+export default function AboutSection({ aboutRef }: AboutSectionProps) {
     const isIntersecting = useIntersectionObserver(aboutRef, "-50%");
 
     return (
@@ -54,6 +53,4 @@ const AboutSection: FC<AboutSectionProps> = ({ aboutRef }) => {
             </Card>
         </StyledAboutSection>
     );
-};
-
-export default AboutSection;
+}

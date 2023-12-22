@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import {
     StyledExperienceSection,
     ExperienceWrapper,
@@ -13,7 +13,9 @@ interface ExperienceSectionProps {
     experienceRef: React.MutableRefObject<HTMLElement | null>;
 }
 
-const ExperienceSection: FC<ExperienceSectionProps> = ({ experienceRef }) => {
+export default function ExperienceSection({
+    experienceRef,
+}: ExperienceSectionProps) {
     const [selected, setSelected] = useState(0);
 
     return (
@@ -35,6 +37,4 @@ const ExperienceSection: FC<ExperienceSectionProps> = ({ experienceRef }) => {
             </ExperienceWrapper>
         </StyledExperienceSection>
     );
-};
-
-export default ExperienceSection;
+}

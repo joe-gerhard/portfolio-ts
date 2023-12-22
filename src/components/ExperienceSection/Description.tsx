@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { StyledDescription } from "./styles";
 import { JOBS } from "../../constants/jobs";
 
@@ -6,7 +5,7 @@ interface DescriptionProps {
     readonly $selected: number;
 }
 
-const Description: FC<DescriptionProps> = ({ $selected }) => {
+export default function Description({ $selected }: DescriptionProps) {
     const job = JOBS[$selected];
 
     return (
@@ -22,6 +21,4 @@ const Description: FC<DescriptionProps> = ({ $selected }) => {
             </ul>
         </StyledDescription>
     );
-};
-
-export default Description;
+}
