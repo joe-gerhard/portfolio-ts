@@ -1,11 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import { StyledApp, Sections } from "./styles";
 import Navbar from "../Navbar";
-import HomeSection from "../HomeSection/HomeSection";
-import AboutSection from "../AboutSection/AboutSection";
-import ExperienceSection from "../ExperienceSection/ExperienceSection";
-import ProjectsSection from "../ProjectsSection/ProjectsSection";
-import ContactSection from "../ContactSection/ContactSection";
+import HomeSection from "../HomeSection";
+import AboutSection from "../AboutSection";
+import ExperienceSection from "../ExperienceSection";
+import ProjectsSection from "../ProjectsSection";
+import ContactSection from "../ContactSection";
 import Footer from "../Footer";
 import useScrollListener from "../../hooks/useScrollListener";
 
