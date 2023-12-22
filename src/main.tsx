@@ -13,6 +13,8 @@ import {
     faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt, faBars } from "@fortawesome/free-solid-svg-icons";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
 
 library.add(
     faGithub,
@@ -24,11 +26,19 @@ library.add(
     faBars,
 );
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App />,
+        errorElement: <ErrorPage />,
+    },
+]);
+
 createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <App />
+            <RouterProvider router={router} />
         </ThemeProvider>
     </React.StrictMode>,
 );
