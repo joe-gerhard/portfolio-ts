@@ -3,7 +3,7 @@ import { Section } from "../../styles";
 import { breakpoints } from "../../constants/breakpoints";
 
 export const StyledExperienceSection = styled(Section)(
-    ({ theme }) => css`
+    () => css`
         width: 100%;
 
         p {
@@ -14,7 +14,7 @@ export const StyledExperienceSection = styled(Section)(
 );
 
 export const ExperienceWrapper = styled.div(
-    ({ theme }) => css`
+    () => css`
         display: flex;
         width: 100%;
 
@@ -29,7 +29,7 @@ export const ExperienceWrapper = styled.div(
 );
 
 export const Buttons = styled.div(
-    ({ theme }) => css`
+    () => css`
         display: flex;
         flex-direction: column;
 
@@ -48,16 +48,20 @@ export const Buttons = styled.div(
     `,
 );
 
-export const ExpButton = styled.button(
-    ({ theme, selected }) => css`
+interface ExpButtonProps {
+    readonly $selected: boolean;
+}
+
+export const ExpButton = styled.button<ExpButtonProps>(
+    ({ theme, $selected }) => css`
         width: 200px;
         min-width: 200px;
         height: 50px;
-        background: ${selected ? theme.accent + "22" : "transparent"};
-        color: ${selected ? theme.dark : theme.light};
+        background: ${$selected ? theme.accent + "22" : "transparent"};
+        color: ${$selected ? theme.dark : theme.light};
         font-size: 16px;
         border: none;
-        border-left: 2px solid ${selected ? theme.accent : theme.light};
+        border-left: 2px solid ${$selected ? theme.accent : theme.light};
         border-radius: none;
         transition: 0.5s;
         text-align: left;
@@ -73,7 +77,7 @@ export const ExpButton = styled.button(
             padding-left: 0;
             min-width: 180px;
             border-left: none;
-            border-bottom: 2px solid ${selected ? theme.accent : theme.light};
+            border-bottom: 2px solid ${$selected ? theme.accent : theme.light};
 
             &:first-child {
                 margin-left: 7.5vw;

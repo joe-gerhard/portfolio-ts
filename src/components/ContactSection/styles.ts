@@ -3,7 +3,7 @@ import { Section } from "../../styles";
 import { breakpoints } from "../../constants/breakpoints";
 
 export const StyledContactSection = styled(Section)(
-    ({ theme }) => css`
+    () => css`
         width: 100%;
 
         p {

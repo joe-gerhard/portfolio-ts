@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import {
     StyledExperienceSection,
     ExperienceWrapper,
@@ -9,7 +9,11 @@ import Description from "./Description";
 import { JOBS } from "../../constants/jobs";
 import SectionHeader from "../SectionHeader";
 
-const ExperienceSection = ({ experienceRef }) => {
+interface ExperienceSectionProps {
+    experienceRef: React.MutableRefObject<HTMLElement | null>;
+}
+
+const ExperienceSection: FC<ExperienceSectionProps> = ({ experienceRef }) => {
     const [selected, setSelected] = useState(0);
 
     return (
@@ -20,14 +24,14 @@ const ExperienceSection = ({ experienceRef }) => {
                     {JOBS.map((job, idx) => (
                         <ExpButton
                             key={job.name}
-                            selected={selected === idx}
+                            $selected={selected === idx}
                             onClick={() => setSelected(idx)}
                         >
                             {job.name}
                         </ExpButton>
                     ))}
                 </Buttons>
-                <Description selected={selected} />
+                <Description $selected={selected} />
             </ExperienceWrapper>
         </StyledExperienceSection>
     );

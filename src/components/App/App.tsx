@@ -25,14 +25,14 @@ const App = () => {
 
     // These refs are used for in-page navigation in the Navbar.
     // I'm sure there's a better way to do this...
-    const aboutRef = useRef();
-    const experienceRef = useRef();
-    const projectsRef = useRef();
-    const contactRef = useRef();
+    const aboutRef = useRef(null);
+    const experienceRef = useRef(null);
+    const projectsRef = useRef(null);
+    const contactRef = useRef(null);
     const refs = { aboutRef, experienceRef, projectsRef, contactRef };
 
     // Helper function for scrolling to the different page sections
-    const executeScroll = (ref : React.MutableRefObject<HTMLElement>) => {
+    const executeScroll = (ref: React.MutableRefObject<HTMLElement>) => {
         ref.current.scrollIntoView({ behavior: "smooth" });
     };
 
@@ -41,12 +41,12 @@ const App = () => {
             <Navbar executeScroll={executeScroll} {...refs} visible={visible} />
             <Sections>
                 <HomeSection />
-                <AboutSection {...refs} />
+                <AboutSection aboutRef={aboutRef} />
                 <ExperienceSection {...refs} />
                 <ProjectsSection {...refs} />
                 <ContactSection {...refs} />
             </Sections>
-            <Footer/>
+            <Footer />
         </StyledApp>
     );
 };

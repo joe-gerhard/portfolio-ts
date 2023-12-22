@@ -3,7 +3,7 @@ import { Section } from "../../styles";
 import { breakpoints } from "../../constants/breakpoints";
 
 export const StyledProjectsSection = styled(Section)(
-    ({ theme }) => css`
+    () => css`
         width: 100%;
 
         p {
@@ -207,7 +207,7 @@ export const ImageContainer = styled.div(
             z-index: 0;
         }
 
-        &:$hover {
+        &: $hover {
             cursor: pointer;
         }
 

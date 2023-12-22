@@ -1,9 +1,13 @@
-import React from "react";
+import { FC } from "react";
 import { StyledAboutSection, Text, Card, ImageContainer } from "./styles";
 import SectionHeader from "../SectionHeader";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
-const AboutSection = ({ aboutRef }) => {
+interface AboutSectionProps {
+    aboutRef: React.MutableRefObject<HTMLElement | null>;
+}
+
+const AboutSection: FC<AboutSectionProps> = ({ aboutRef }) => {
     const isIntersecting = useIntersectionObserver(aboutRef, "-50%");
 
     return (

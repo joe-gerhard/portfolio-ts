@@ -24,7 +24,11 @@ export const Card = styled.div(
     `,
 );
 
-export const Text = styled.div(
+interface TextProps {
+    readonly $active: boolean;
+}
+
+export const Text = styled.div<TextProps>(
     ({ $active }) => css`
         display: flex;
         flex-direction: column;
@@ -55,7 +59,11 @@ export const Text = styled.div(
     `,
 );
 
-export const ImageContainer = styled.div(
+interface ImageContainerProps {
+    readonly $hover: boolean;
+}
+
+export const ImageContainer = styled.div<ImageContainerProps>(
     ({ theme, $hover }) => css`
         position: relative;
         width: 40%;

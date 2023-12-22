@@ -1,9 +1,13 @@
-import React from "react";
+import { FC } from "react";
 import { StyledDescription } from "./styles";
 import { JOBS } from "../../constants/jobs";
 
-const Description = ({ selected }) => {
-    const job = JOBS[selected];
+interface DescriptionProps {
+    readonly $selected: number;
+}
+
+const Description: FC<DescriptionProps> = ({ $selected }) => {
+    const job = JOBS[$selected];
 
     return (
         <StyledDescription>

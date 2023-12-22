@@ -5,10 +5,24 @@ import { GlobalStyle } from "./styles/globalStyle";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faGithub, faLinkedinIn, faFacebookF, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+    faGithub,
+    faLinkedinIn,
+    faFacebookF,
+    faInstagram,
+    faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt, faBars } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faGithub, faLinkedinIn, faFacebookF, faInstagram, faTwitter, faExternalLinkAlt, faBars);
+library.add(
+    faGithub,
+    faLinkedinIn,
+    faFacebookF,
+    faInstagram,
+    faTwitter,
+    faExternalLinkAlt,
+    faBars,
+);
 
 createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -16,5 +30,5 @@ createRoot(document.getElementById("root")!).render(
             <GlobalStyle />
             <App />
         </ThemeProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
 );
