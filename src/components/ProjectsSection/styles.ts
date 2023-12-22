@@ -70,7 +70,11 @@ export const StyledProject = styled.div(
     `,
 );
 
-export const Description = styled.div(
+interface DescriptionProps {
+    readonly $hover: boolean;
+}
+
+export const Description = styled.div<DescriptionProps>(
     ({ theme, $hover }) => css`
         position: absolute;
         display: flex;
@@ -189,7 +193,11 @@ export const Icons = styled.div(
     `,
 );
 
-export const ImageContainer = styled.div(
+interface ImageContainerProps {
+    readonly $hover: boolean;
+}
+
+export const ImageContainer = styled.div<ImageContainerProps>(
     ({ theme, $hover }) => css`
         position: relative;
         max-width: 50%;

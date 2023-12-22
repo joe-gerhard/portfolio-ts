@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const StyledSectionHeader = styled.h2(
+interface StyledSectionHeaderProps {
+    readonly $textAlign?: string;
+    readonly $isIntersecting: boolean;
+}
+
+export const StyledSectionHeader = styled.h2<StyledSectionHeaderProps>(
     ({ theme, $textAlign, $isIntersecting }) => css`
         text-align: ${$textAlign ? $textAlign : "left"};
         width: ${$isIntersecting ? "100%" : "0%"};

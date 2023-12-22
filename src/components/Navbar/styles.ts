@@ -2,7 +2,12 @@ import styled, { css } from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const StyledNav = styled.nav(
+interface StyledNavProps {
+    readonly $visible: boolean;
+    readonly $isOpen: boolean;
+}
+
+export const StyledNav = styled.nav<StyledNavProps>(
     ({ theme, $visible, $isOpen }) => css`
         position: fixed;
         top: ${$visible || $isOpen ? "0" : "-60px"};
@@ -21,7 +26,11 @@ export const StyledNav = styled.nav(
     `,
 );
 
-export const StyledLink = styled.span(
+interface StyledLinkProps {
+    readonly $menu?: boolean;
+}
+
+export const StyledLink = styled.span<StyledLinkProps>(
     ({ theme, $menu }) => css`
         margin: 0 10px;
         margin-bottom: ${$menu ? "40px" : 0};
@@ -60,7 +69,11 @@ export const Icon = styled(FontAwesomeIcon)(
     `,
 );
 
-export const Menu = styled.div(
+interface StyledMenuProps {
+    readonly $isOpen: boolean;
+}
+
+export const Menu = styled.div<StyledMenuProps>(
     ({ theme, $isOpen }) => css`
         display: none;
         flex-direction: column;

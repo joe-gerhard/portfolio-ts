@@ -32,19 +32,23 @@ const App = () => {
     const refs = { aboutRef, experienceRef, projectsRef, contactRef };
 
     // Helper function for scrolling to the different page sections
-    const executeScroll = (ref: React.MutableRefObject<HTMLElement>) => {
-        ref.current.scrollIntoView({ behavior: "smooth" });
+    const executeScroll = (ref: React.MutableRefObject<HTMLElement | null>) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
         <StyledApp>
-            <Navbar executeScroll={executeScroll} {...refs} visible={visible} />
+            <Navbar
+                executeScroll={executeScroll}
+                {...refs}
+                $visible={visible}
+            />
             <Sections>
                 <HomeSection />
                 <AboutSection aboutRef={aboutRef} />
-                <ExperienceSection {...refs} />
-                <ProjectsSection {...refs} />
-                <ContactSection {...refs} />
+                <ExperienceSection experienceRef={experienceRef} />
+                <ProjectsSection projectsRef={projectsRef} />
+                <ContactSection contactRef={contactRef} />
             </Sections>
             <Footer />
         </StyledApp>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { FC, useRef } from "react";
 import {
     Description,
     Text,
@@ -9,8 +9,13 @@ import {
 } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { project } from "../../constants/projects";
 
-const Project = ({ project }) => {
+interface ProjectProps {
+    project: project;
+}
+
+const Project: FC<ProjectProps> = ({ project }) => {
     const ref = useRef(null);
     const isIntersecting = useIntersectionObserver(ref, "-25%");
 
@@ -47,14 +52,14 @@ const Project = ({ project }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FontAwesomeIcon icon="fa-brands fa-github" />
+                        <FontAwesomeIcon icon={["fab", "github"]} />
                     </a>
                     <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FontAwesomeIcon icon="fa fa-external-link-alt" />
+                        <FontAwesomeIcon icon="external-link-alt" />
                     </a>
                 </Icons>
             </Text>

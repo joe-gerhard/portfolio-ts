@@ -1,4 +1,3 @@
-import React from "react";
 import { StyledHomeSection, Card } from "./styles";
 import Button from "../Button";
 

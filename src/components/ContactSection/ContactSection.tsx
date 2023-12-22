@@ -1,10 +1,14 @@
-import React from "react";
+import { FC, MutableRefObject } from "react";
 import { StyledContactSection } from "./styles";
 import Button from "../Button";
 import SocialBar from "../SocialBar";
 import SectionHeader from "../SectionHeader";
 
-const ContactSection = ({ contactRef }) => {
+interface ContactSectionProps {
+    contactRef: MutableRefObject<HTMLElement | null>;
+}
+
+const ContactSection: FC<ContactSectionProps> = ({ contactRef }) => {
     const handleEmailMe = () => {
         window.open("mailto:JLGerhard@gmail.com", "_blank");
     };

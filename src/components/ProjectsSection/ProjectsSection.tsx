@@ -1,10 +1,14 @@
-import React from "react";
+import { FC, MutableRefObject } from "react";
 import { StyledProjectsSection } from "./styles";
 import { PROJECTS } from "../../constants/projects";
 import Project from "./Project";
 import SectionHeader from "../SectionHeader";
 
-const ProjectsSection = ({ projectsRef }) => {
+interface ProjectsSectionProps {
+    projectsRef: MutableRefObject<HTMLElement | null>;
+}
+
+const ProjectsSection: FC<ProjectsSectionProps> = ({ projectsRef }) => {
     return (
         <StyledProjectsSection ref={projectsRef}>
             <SectionHeader>Projects</SectionHeader>

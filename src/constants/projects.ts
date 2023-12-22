@@ -1,6 +1,15 @@
 import joesbook from "../images/Joesbook.png";
 
-export const PROJECTS = [
+export interface project {
+    readonly name: string;
+    readonly github: string;
+    readonly link: string;
+    readonly image: string;
+    readonly technologies: string[];
+    readonly description: string;
+}
+
+export const PROJECTS: project[] = [
     {
         name: "Joesbook",
         github: "https://github.com/joe-gerhard/joesbook",

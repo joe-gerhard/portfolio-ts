@@ -1,4 +1,3 @@
-import React from "react";
 import { StyledSocialBar } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,35 +9,35 @@ const SocialBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FontAwesomeIcon icon="fa-brands fa-github" />
+                <FontAwesomeIcon icon={["fab", "github"]} />
             </a>
             <a
                 href="https://www.linkedin.com/in/joe-gerhard"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />
+                <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
             </a>
             <a
                 href="https://www.facebook.com/profile.php?id=10044811"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FontAwesomeIcon icon="fa-brands fa-facebook-f" />
+                <FontAwesomeIcon icon={["fab", "facebook-f"]} />
             </a>
             <a
                 href="https://www.instagram.com/joedoesnotsuckatlife/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FontAwesomeIcon icon="fa-brands fa-instagram" />
+                <FontAwesomeIcon icon={["fab", "instagram"]} />
             </a>
             <a
                 href="https://twitter.com/joegerhard"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FontAwesomeIcon icon="fa-brands fa-twitter" />
+                <FontAwesomeIcon icon={["fab", "twitter"]} />
             </a>
         </StyledSocialBar>
     );

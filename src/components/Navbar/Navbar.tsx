@@ -1,15 +1,24 @@
-import React from "react";
+import { FC, MutableRefObject } from "react";
 import { StyledNav, StyledLink, Icon, Menu } from "./styles";
 import Button from "../Button";
 import { useState } from "react";
 
-const Navbar = ({
+interface NavbarProps {
+    executeScroll: (ref: MutableRefObject<HTMLElement | null>) => void;
+    aboutRef: MutableRefObject<HTMLElement | null>;
+    experienceRef: MutableRefObject<HTMLElement | null>;
+    projectsRef: MutableRefObject<HTMLElement | null>;
+    contactRef: MutableRefObject<HTMLElement | null>;
+    readonly $visible: boolean;
+}
+
+const Navbar: FC<NavbarProps> = ({
     executeScroll,
     aboutRef,
     experienceRef,
     projectsRef,
     contactRef,
-    visible,
+    $visible,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -22,7 +31,7 @@ const Navbar = ({
     };
 
     return (
-        <StyledNav $visible={visible} $isOpen={isOpen}>
+        <StyledNav $visible={$visible} $isOpen={isOpen}>
             <StyledLink onClick={() => executeScroll(aboutRef)}>
                 About
             </StyledLink>
@@ -38,7 +47,7 @@ const Navbar = ({
             <Button $dark $hide onClick={handleOpenResume} $margin={"20px"}>
                 Resumé
             </Button>
-            <Icon icon="fa fa-bars" onClick={handleToggleMenu} />
+            <Icon icon="bars" onClick={handleToggleMenu} />
             <Menu $isOpen={isOpen} onClick={handleToggleMenu}>
                 <StyledLink $menu onClick={() => executeScroll(aboutRef)}>
                     About
