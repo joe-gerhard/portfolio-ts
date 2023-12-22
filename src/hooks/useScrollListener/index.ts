@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 
-export default function useScrollListener() {
-    const [data, setData] = useState({
+export interface ScrollData {
+    readonly x: number;
+    readonly y: number;
+    readonly lastX: number;
+    readonly lastY: number;
+}
+
+export default function useScrollListener(): ScrollData {
+    const [data, setData] = useState<ScrollData>({
         x: 0,
         y: 0,
         lastX: 0,

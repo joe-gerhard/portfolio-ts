@@ -3,8 +3,8 @@ import { useState, useEffect, MutableRefObject } from "react";
 export function useIntersectionObserver(
     ref: MutableRefObject<HTMLElement | null>,
     rootMargin: string = "0px",
-) {
-    const [isIntersecting, setIsIntersecting] = useState(false);
+): boolean {
+    const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
