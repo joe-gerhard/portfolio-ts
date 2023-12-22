@@ -10,7 +10,7 @@ import Footer from "../Footer";
 import useScrollListener from "../../hooks/useScrollListener";
 
 const App = () => {
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState<boolean>(true);
     const scroll = useScrollListener();
 
     useEffect(() => {
