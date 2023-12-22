@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { StyledApp, Sections } from "./styles";
 import Navbar from "../Navbar";
 import HomeSection from "../HomeSection/HomeSection";
@@ -31,18 +31,9 @@ const App = () => {
     const contactRef = useRef(null);
     const refs = { aboutRef, experienceRef, projectsRef, contactRef };
 
-    // Helper function for scrolling to the different page sections
-    const executeScroll = (ref: React.MutableRefObject<HTMLElement | null>) => {
-        ref.current?.scrollIntoView({ behavior: "smooth" });
-    };
-
     return (
         <StyledApp>
-            <Navbar
-                executeScroll={executeScroll}
-                {...refs}
-                $visible={visible}
-            />
+            <Navbar {...refs} $visible={visible} />
             <Sections>
                 <HomeSection />
                 <AboutSection aboutRef={aboutRef} />

@@ -2,9 +2,9 @@ import { FC, MutableRefObject } from "react";
 import { StyledNav, StyledLink, Icon, Menu } from "./styles";
 import Button from "../Button";
 import { useState } from "react";
+import { executeScroll, openResume } from "../../utils";
 
 interface NavbarProps {
-    executeScroll: (ref: MutableRefObject<HTMLElement | null>) => void;
     aboutRef: MutableRefObject<HTMLElement | null>;
     experienceRef: MutableRefObject<HTMLElement | null>;
     projectsRef: MutableRefObject<HTMLElement | null>;
@@ -13,7 +13,6 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({
-    executeScroll,
     aboutRef,
     experienceRef,
     projectsRef,
@@ -21,10 +20,6 @@ const Navbar: FC<NavbarProps> = ({
     $visible,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const handleOpenResume = () => {
-        window.open("/joe_gerhard_resume.pdf", "_blank");
-    };
 
     const handleToggleMenu = () => {
         setIsOpen(!isOpen);
@@ -44,7 +39,7 @@ const Navbar: FC<NavbarProps> = ({
             <StyledLink onClick={() => executeScroll(contactRef)}>
                 Contact
             </StyledLink>
-            <Button $dark $hide onClick={handleOpenResume} $margin={"20px"}>
+            <Button $dark $hide onClick={openResume} $margin={"20px"}>
                 Resumé
             </Button>
             <Icon icon="bars" onClick={handleToggleMenu} />
@@ -61,7 +56,7 @@ const Navbar: FC<NavbarProps> = ({
                 <StyledLink $menu onClick={() => executeScroll(contactRef)}>
                     Contact
                 </StyledLink>
-                <Button $dark $menu onClick={handleOpenResume} $margin={"20px"}>
+                <Button $dark $menu onClick={openResume} $margin={"20px"}>
                     Resumé
                 </Button>
             </Menu>
