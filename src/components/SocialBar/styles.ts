@@ -18,7 +18,7 @@ export const StyledSocialBar = styled.div(
             justify-content: center;
             top: 0;
             left: 0;
-            width: 100%;
+            width: min-content;
         }
 
         a {

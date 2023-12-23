@@ -20,8 +20,18 @@ export const StyledProject = styled.div(
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
-        margin-bottom: 7rem;
+        margin-bottom: 1.5rem;
         height: 350px;
+        border: 1px solid ${theme.dark + "11"};
+        box-shadow: 0 10px 8px 1px ${theme.primary + "44"};
+        border-radius: 1rem;
+
+        @media (min-width: ${breakpoints.small}) {
+            margin-bottom: 7rem;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
 
         h3 {
             text-align: left;
@@ -35,8 +45,8 @@ export const StyledProject = styled.div(
             }
 
             @media (max-width: ${breakpoints.small}) {
-                font-size: 14px;
-                padding-right: 20px;
+                font-size: 1rem;
+                padding-right: 1.5rem;
             }
         }
 
@@ -53,8 +63,8 @@ export const StyledProject = styled.div(
             }
 
             @media (max-width: ${breakpoints.small}) {
-                font-size: 20px;
-                padding-right: 20px;
+                font-size: 1.5rem;
+                padding-right: 1.5rem;
             }
         }
 
@@ -90,6 +100,7 @@ export const Description = styled.div<DescriptionProps>(
         background: ${theme.primary};
         color: ${theme.light};
         transition: 1s;
+        box-shadow: 0 5px 20px 2px ${theme.dark + "55"};
 
         @media (max-width: ${breakpoints.medium}) {
             background: transparent;
@@ -105,6 +116,7 @@ export const Description = styled.div<DescriptionProps>(
             font-size: 14px;
             padding-right: 20px;
             top: 25%;
+            box-shadow: none;
         }
     `,
 );
@@ -213,6 +225,7 @@ export const ImageContainer = styled.div<ImageContainerProps>(
             height: 100%;
             max-width: 100%;
             z-index: 0;
+            border-radius: 1rem;
         }
 
         &: $hover {
@@ -225,11 +238,11 @@ export const ImageContainer = styled.div<ImageContainerProps>(
             opacity: ${$hover ? 1 : 0.1};
             width: 100%;
             height: 100%;
-            transition: 2s;
+            transition: 1.75s;
 
             @media (max-width: ${breakpoints.medium}) {
-                filter: grayscale(1);
-                opacity: ${$hover ? 0.1 : 0};
+                filter: grayscale(${$hover ? 1 : 0});
+                opacity: ${$hover ? 0.025 : 0.7};
             }
         }
 

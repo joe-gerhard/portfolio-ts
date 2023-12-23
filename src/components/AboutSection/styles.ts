@@ -11,15 +11,16 @@ export const StyledAboutSection = styled(Section)(
 export const Card = styled.div(
     () => css`
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column-reverse;
+        align-items: center;
         justify-content: flex-start;
-        gap: 3rem;
+        gap: 1.5rem;
         width: 100%;
 
-        @media (max-width: ${breakpoints.large}) {
-            flex-direction: column;
-            align-items: center;
+        @media (min-width: ${breakpoints.large}) {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 3rem;
         }
     `,
 );

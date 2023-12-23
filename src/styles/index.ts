@@ -8,17 +8,21 @@ export const Section = styled.section(
         align-items: center;
         justify-content: flex-start;
         color: ${theme.dark};
-        min-height: calc(100vh - 5rem);
-        margin-bottom: 5rem;
+        min-height: calc(100vh - 7rem);
+        margin-bottom: 7rem;
         scroll-margin: 1.5rem;
 
         &:last-child {
             min-height: 0vh;
-            margin-bottom: 5rem;
+            margin-bottom: 1.5rem;
         }
 
         @media (min-width: ${breakpoints.small}) {
             scroll-margin: 7rem;
+
+            &:last-child {
+                margin-bottom: 5rem;
+            }
         }
     `,
 );

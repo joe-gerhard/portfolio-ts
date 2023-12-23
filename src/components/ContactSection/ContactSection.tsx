@@ -13,7 +13,6 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
     return (
         <StyledContactSection ref={contactRef}>
             <SectionHeader $textAlign="center">Contact</SectionHeader>
-            <SocialBar />
             <p>
                 I am actively seeking new work opportinities, so please feel
                 free to reach out any time. Looking forward to hearing from you!
@@ -21,6 +20,7 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
             <Button $dark onClick={emailMe}>
                 Email
             </Button>
+            <SocialBar />
         </StyledContactSection>
     );
 }

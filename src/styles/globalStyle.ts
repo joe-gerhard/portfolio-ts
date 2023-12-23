@@ -155,16 +155,6 @@ export const globalStyle = css`
         border-collapse: collapse;
         border-spacing: 0;
     }
-
-    h1,
-    h2 {
-        font-size: 36px;
-        font-weight: 900;
-
-        @media (max-width: ${breakpoints.small}) {
-            font-size: 28px;
-        }
-    }
 `;
 
 export const GlobalStyle = createGlobalStyle`${globalStyle}`;
