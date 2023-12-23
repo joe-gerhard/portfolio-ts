@@ -1,5 +1,4 @@
 import { css, createGlobalStyle } from "styled-components";
-import { breakpoints } from "../constants/breakpoints";
 import theme from "./theme";
 
 export const globalStyle = css`
