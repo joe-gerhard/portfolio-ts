@@ -90,7 +90,6 @@ export const Description = styled.div<DescriptionProps>(
         display: flex;
         align-items: center;
         height: 80px;
-        border-radius: 3px;
         line-height: 20px;
         top: 30%;
         right: ${$hover ? "20px" : "0"};
@@ -100,7 +99,7 @@ export const Description = styled.div<DescriptionProps>(
         background: ${theme.primary};
         color: ${theme.light};
         transition: 1s;
-        box-shadow: 0 5px 20px 2px ${theme.dark + "55"};
+        box-shadow: 0 5px 15px 0 ${theme.dark + "99"};
 
         @media (max-width: ${breakpoints.medium}) {
             background: transparent;
@@ -121,12 +120,20 @@ export const Description = styled.div<DescriptionProps>(
     `,
 );
 
-export const Text = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-`;
+interface TextProps {
+    readonly $hover: boolean;
+}
+
+export const Text = styled.div<TextProps>(
+    ({ $hover }) => css`
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: ${$hover ? 1 : 0};
+        transition: 1.5s;
+    `,
+);
 
 export const Technologies = styled.div`
     margin-top: auto;
@@ -216,6 +223,7 @@ export const ImageContainer = styled.div<ImageContainerProps>(
         width: 1000px;
         height: 350px;
         overflow: hidden;
+        border-radius: 1rem;
 
         @media (max-width: ${breakpoints.medium}) {
             position: absolute;
@@ -241,8 +249,9 @@ export const ImageContainer = styled.div<ImageContainerProps>(
             transition: 1.75s;
 
             @media (max-width: ${breakpoints.medium}) {
-                filter: grayscale(${$hover ? 1 : 0});
-                opacity: ${$hover ? 0.025 : 0.7};
+                filter: contrast(${$hover ? 0.75 : 1})
+                    blur(${$hover ? "5px" : 0});
+                opacity: ${$hover ? 0.3 : 1};
             }
         }
 

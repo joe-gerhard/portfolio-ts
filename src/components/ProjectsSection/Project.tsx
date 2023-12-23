@@ -27,7 +27,7 @@ export default function Project({ project }: ProjectProps) {
             >
                 <img src={project.image} alt={project.name} />
             </ImageContainer>
-            <Text>
+            <Text $hover={isIntersecting}>
                 <h3>Featured Project</h3>
                 <h2>
                     <a
