@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 
-export const StyledApp = styled.div`
+export const StyledApp = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
