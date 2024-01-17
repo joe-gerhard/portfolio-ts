@@ -14,7 +14,7 @@ export const PROJECTS: project[] = [
     {
         name: "Tetris",
         github: "https://github.com/joe-gerhard/tetris",
-        link: "https://master--comforting-torte-bb7a76.netlify.app/",
+        link: "https://joe-tetris.netlify.app/",
         image: tetris,
         technologies: ["HTML", "CSS", "TypeScript", "Vite"],
         description: `A fun little NES Tetris clone whipped up in a couple days with mostly vanilla web technoligies, Vite, and Typescript. I mostly just wanted to get more familiar with the Canvas element. Just try it for a little bit... it's totally not addicting`,
